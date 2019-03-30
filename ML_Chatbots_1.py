@@ -90,6 +90,7 @@ responses = {
     ],
   "default": ["default message"]
 }
+
 # Use random.choice() to choose a matching response
 def respond(message):
     # Check if the message is in the responses

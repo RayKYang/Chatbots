@@ -12,7 +12,7 @@ message = """
 Mary is a fiend of mine, 
 she studied at Oxford and
 now works at Google"""
-pattern.findall(message) # find all capitalized words
+pattern.findall(message)  # find all capitalized words
 
 # The keywords dictionary for identifying intent
 keywords = {'thankyou': ['thank', 'thx'], 'greet': ['hello', 'hi', 'hey'], 'goodbye': ['bye', 'farewell']}
@@ -24,11 +24,6 @@ for intent, keys in keywords.items():
 # Print the patterns
 print(patterns)
 
-responses = {'default': 'default message',
-             'goodbye': 'goodbye for now',
-               'greet': 'Hello you! :)',
-            'thankyou': 'you are very welcome'}
-
 # Define a function to find the intent of a message
 def match_intent(message):
     matched_intent = None
@@ -37,6 +32,11 @@ def match_intent(message):
         if pattern.search(message):
             matched_intent = intent
     return matched_intent
+
+responses = {'default': 'default message',
+             'goodbye': 'goodbye for now',
+               'greet': 'Hello you! :)',
+            'thankyou': 'you are very welcome'}
 
 # Define a respond function
 def respond(message):
